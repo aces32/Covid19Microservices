@@ -1,0 +1,24 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Covid19.GrpcContracts";
+
+package booking;
+
+// Request message (can be empty for full list)
+message GetAllBookingAllocationsRequest {}
+
+message BookingAvailabilityDto {
+  int32 adminBookingAllocationId = 1;
+  int32 locationId = 2;
+  string bookingDate = 3;
+  int32 capacity = 4;
+  int32 spaceAllocated = 5;
+}
+
+message GetAllBookingAllocationsResponse {
+  repeated BookingAvailabilityDto bookings = 1;
+}
+
+service BookingAvailabilityService {
+  rpc GetAllBookingAllocations(GetAllBookingAllocationsRequest) returns (GetAllBookingAllocationsResponse);
+}

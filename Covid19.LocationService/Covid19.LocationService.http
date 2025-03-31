@@ -1,0 +1,6 @@
+@Covid19.LocationService_HostAddress = http://localhost:5293
+
+GET {{Covid19.LocationService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

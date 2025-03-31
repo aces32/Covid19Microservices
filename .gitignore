@@ -1,0 +1,59 @@
+## Build results
+**/bin/
+**/obj/
+**/out/
+
+## Rider project files
+.idea/
+
+## VS Code
+.vscode/
+
+## Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+## Logs
+*.log
+
+## Dependency directories
+packages/
+*.nupkg
+*.snupkg
+
+## NuGet cache
+.nuget/
+
+## Docker artifacts
+*.tar
+*.env
+docker-compose.override.yml
+
+## User secrets
+secrets.json
+
+## Local dev settings
+**/appsettings.Development.json
+**/appsettings.Local.json
+
+## Temporary files
+*.tmp
+*.temp
+*.bak
+*.dbmdl
+*.cache
+*.pid
+
+## Terraform
+*.tfstate
+*.tfstate.*
+
+## IDE Generated
+Covid19.Microservices.slnLaunch.user
+
+## OS files
+Thumbs.db
+.DS_Store

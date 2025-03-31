@@ -1,0 +1,6 @@
+@Covid19.AdministratorService_HostAddress = http://localhost:5183
+
+GET {{Covid19.AdministratorService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
