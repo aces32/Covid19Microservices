@@ -1,6 +1,6 @@
 # 🦠 Covid19.Microservices
 
-A modern, event-driven **microservices-based COVID-19 test management system**, built with **.NET 8**, **gRPC**, **RabbitMQ**, **Docker**, and **Kubernetes**.
+A modern, event-driven **microservices-based COVID-19 test management system**, built with **.NET 9**, **gRPC**, **RabbitMQ**, **Docker**, and **Kubernetes**.
 
 > 🛠️ This project is a **complete redesign** of the original monolithic app:  
 > 👉 [Covid19ManagementSystemDotNet](https://github.com/aces32/Covid19ManagementSystemDotNet)
@@ -9,7 +9,7 @@ A modern, event-driven **microservices-based COVID-19 test management system**, 
 
 ## 🚀 Highlights
 
-- ✅ Microservices architecture using **ASP.NET Core**
+- ✅ Microservices architecture using **ASP.NET**
 - ✅ **gRPC** for fast, typed service-to-service communication
 - ✅ **RabbitMQ** + **MassTransit** for asynchronous event messaging
 - ✅ Clean, maintainable **Domain-Driven Design (DDD)**
