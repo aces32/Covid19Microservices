@@ -52,7 +52,7 @@ Covid19.Microservices/
 
 | Layer           | Technology                           |
 |----------------|---------------------------------------|
-| Language        | C# (.NET 8)                          |
+| Language        | C# (.NET 9.0)                          |
 | APIs            | REST, gRPC                           |
 | Messaging       | RabbitMQ + MassTransit               |
 | Database        | PostgreSQL, In-Memory (dev)          |
