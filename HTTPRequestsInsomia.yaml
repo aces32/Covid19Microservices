@@ -1,0 +1,430 @@
+type: collection.insomnia.rest/5.0
+name: Covid19
+meta:
+  id: wrk_319094b06dcf48e1ba2603e1124a9d58
+  created: 1743485711915
+  modified: 1743485711915
+collection:
+  - name: Local
+    meta:
+      id: fld_7b817f2a72324d36a71b9827e0e796e5
+      created: 1743485829870
+      modified: 1743487711343
+      sortKey: -1743485829870
+    children:
+      - name: Location Service
+        meta:
+          id: fld_fdb73643179b4949bdc03a69bd3092a6
+          created: 1743485847039
+          modified: 1743485847039
+          sortKey: -1743485847039
+        children:
+          - url: https://localhost:7201/api/Location/GetLocationByIds?locationIds=1
+            name: GetLocationByIds
+            meta:
+              id: req_237f5f34fb704e72a8a47430af44b382
+              created: 1743486037274
+              modified: 1743487668592
+              isPrivate: false
+              sortKey: -1743486005771
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://localhost:7201/api/Location
+            name: GetAllLocation
+            meta:
+              id: req_dd8234f7ede9455c87e56805b4a4fade
+              created: 1743486041140
+              modified: 1743487665857
+              isPrivate: false
+              sortKey: -1743486005671
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Admin Service
+        meta:
+          id: fld_e155d8cad33646329161bf32ea562bba
+          created: 1743486220528
+          modified: 1743486220528
+          sortKey: -1743486220528
+        children:
+          - url: http://acme.com/api/Administrator/GetAvailableBookingDetails
+            name: GetAvailableBookingDetails
+            meta:
+              id: req_2c6d33f39b3f4f6c90d3d18f10724c1a
+              created: 1743486203810
+              modified: 1743486236418
+              isPrivate: false
+              sortKey: -1743486224808
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://localhost:7061/api/Administrator/AllocateBookingSpace
+            name: AllocateBookingSpace
+            meta:
+              id: req_7ff2628ccdd942e8b80c9339220c7903
+              created: 1743486846279
+              modified: 1743486907811
+              isPrivate: false
+              sortKey: -1743486846279
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "capacity": 500,
+                  "bookingDate": "2025-04-02T05:45:07.568Z",
+                  "locationId": 3
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: IndividualService
+        meta:
+          id: fld_787b68f3baad43d38efadc4190da38a2
+          created: 1743487036058
+          modified: 1743487036058
+          sortKey: -1743487036058
+        children:
+          - url: https://localhost:7117/api/Individual/BookCovidTest
+            name: BookCovidTest
+            meta:
+              id: req_dab999e1220f49e5aae3b9730d5d1b32
+              created: 1743487419513
+              modified: 1743487419513
+              isPrivate: false
+              sortKey: -1743487093191
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "individualFirstName": "sulaimon",
+                  "individualLastName": "buari",
+                  "individualEmailAddress": "test@test.com",
+                  "individualMobileNumber": "08083837752",
+                  "bookingDate": "2025-04-03T01:54:21.344308+00:00",
+                  "locationId": 2,
+                  "individualLab": {
+                    "testType": 1
+                  }
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: IndividualLabs
+        meta:
+          id: fld_36c9a46285ed448db5b2be0f8ad9214c
+          created: 1743487785807
+          modified: 1743487785807
+          sortKey: -1743487785807
+        children:
+          - url: https://localhost:7068/api/IndividualLabs/SetTestOutcome
+            name: SetTestOutcome
+            meta:
+              id: req_2faee3fce4b94795b309dfe4de55ecab
+              created: 1743487792262
+              modified: 1743487833256
+              isPrivate: false
+              sortKey: -1743487792262
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "individualId": 1,
+                  "testOutCome": "negative",
+                  "testCompleted": true
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+  - name: K8s
+    meta:
+      id: fld_f357d2043e424080bfc25256b63a822b
+      created: 1743486055449
+      modified: 1743487702751
+      sortKey: -1743486055449
+    children:
+      - name: Location Service
+        meta:
+          id: fld_738155abbbaf42e3be816b58acacb7dc
+          created: 1743486084863
+          modified: 1743486084863
+          sortKey: -1743486084863
+        children:
+          - url: https://acme.com/api/Location
+            name: GetAllLocation
+            meta:
+              id: req_21ca783a3426469c8a00ef8ca0e2eb3f
+              created: 1743485906501
+              modified: 1743487720168
+              isPrivate: false
+              sortKey: -1743487720096
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://acme.com/api/Location/GetLocationByIds?locationIds=1
+            name: GetLocationByIds
+            meta:
+              id: req_e232465a48bd4604bd86f8901a75f2a5
+              created: 1743486005571
+              modified: 1743487721801
+              isPrivate: false
+              sortKey: -1743487720196
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Admin Service
+        meta:
+          id: fld_0afc42b3741743bfa1d16a5dc601dc26
+          created: 1743486169749
+          modified: 1743486169749
+          sortKey: -1743486169749
+        children:
+          - url: http://acme.com/api/Administrator/GetAvailableBookingDetails
+            name: GetAvailableBookingDetails
+            meta:
+              id: req_17ef605dfde94c1d974f59d24dc40449
+              created: 1743486177249
+              modified: 1743487004952
+              isPrivate: false
+              sortKey: -1743486177249
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://acme.com/api/Administrator/AllocateBookingSpace
+            name: AllocateBookingSpace
+            meta:
+              id: req_59b1e518987b4ec682d8432e7d4f3e3b
+              created: 1743486918695
+              modified: 1743486994897
+              isPrivate: false
+              sortKey: -1743486177349
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "capacity": 500,
+                  "bookingDate": "2025-04-02T05:45:07.568Z",
+                  "locationId": 3
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: IndividualService
+        meta:
+          id: fld_41206f4dc1704d1b85a164daeef2c130
+          created: 1743487444671
+          modified: 1743487444671
+          sortKey: -1743487444671
+      - name: IndividualLabs
+        meta:
+          id: fld_fd2e1c32f6864d70af8b2c535eddceed
+          created: 1743487862320
+          modified: 1743487873243
+          sortKey: -1743487444771
+      - url: http://acme.com/api/Individual/BookCovidTest
+        name: BookCovidTest
+        meta:
+          id: req_efc0d3155c8840909a212bdaceb40dd6
+          created: 1743487340103
+          modified: 1743487466939
+          isPrivate: false
+          sortKey: -1743486807210
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "individualFirstName": "sulaimon",
+              "individualLastName": "buari",
+              "individualEmailAddress": "test@test.com",
+              "individualMobileNumber": "08083837752",
+              "bookingDate": "2025-04-03T01:54:21.344308+00:00",
+              "locationId": 2,
+              "individualLab": {
+                "testType": 1
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://acme.com/api/Individual/CancelBookedTest
+        name: CancelBookedTest
+        meta:
+          id: req_ff3437070f224267a6fbb147834fbade
+          created: 1743487494768
+          modified: 1743487584606
+          isPrivate: false
+          sortKey: -1743487125940.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "individualEmailAddress": "test@test.com",
+              "individualMobileNumber": "08083837752",
+              "individualBookingStatus": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://acme.com/api/IndividualLabs/SetTestOutcome
+        name: SetTestOutcome
+        meta:
+          id: req_c56177cb08ac4ddf9b099ddba34b931d
+          created: 1743487841255
+          modified: 1743487891853
+          isPrivate: false
+          sortKey: -1743487444721
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "individualId": 1,
+              "testOutCome": "negative",
+              "testCompleted": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_ac9d248e421c6f3645a0c66a1371cefb0486159a
+    created: 1743485711921
+    modified: 1743485711921
+environments:
+  name: Base Environment
+  meta:
+    id: env_ac9d248e421c6f3645a0c66a1371cefb0486159a
+    created: 1743485711918
+    modified: 1743485711918
+    isPrivate: false

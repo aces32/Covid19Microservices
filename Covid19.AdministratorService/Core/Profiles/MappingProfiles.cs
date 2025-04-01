@@ -11,6 +11,7 @@ namespace Covid19.AdministratorService.Core.Profiles
         {
             CreateMap<AllocateBookingSpaceCommand, AdminBookingAllocation>().ReverseMap();
             CreateMap<AllocateBookingSpaceCommandResponse, AdminBookingAllocation>().ReverseMap();
+            CreateMap<AdminBookingAllocation, BookingSlotCreatedEvent>();
         }
     }
 }

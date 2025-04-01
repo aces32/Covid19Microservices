@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: location-depl
+spec:
+  selector:
+    matchLabels:
+      app: locationservice    
+  template:
+    metadata:
+      labels:
+        app: locationservice
+    spec:
+      containers:
+        - name: locationservice
+          image: aces32/covid19.locationservice:latest
+  replicas: 1

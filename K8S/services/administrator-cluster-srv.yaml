@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: administrator-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: administratorservice
+  ports:
+    - name: administratorservice
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: administratorgrpc
+      protocol: TCP
+      port: 666
+      targetPort: 666

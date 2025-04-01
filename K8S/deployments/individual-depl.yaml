@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: individual-depl
+spec:
+  selector:
+    matchLabels:
+      app: individualservice    
+  template:
+    metadata:
+      labels:
+        app: individualservice
+    spec:
+      containers:
+        - name: individualservice
+          image: aces32/covid19.individualservice:latest
+  replicas: 1

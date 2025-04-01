@@ -1,0 +1,41 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-srv
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+spec:
+  rules:
+    - host: acme.com
+      http:
+        paths:
+          - path: /api/Administrator/
+            pathType: Prefix
+            backend:
+              service:
+                name: administrator-clusterip-srv
+                port:
+                  number: 80
+          - path: /api/Location
+            pathType: Prefix
+            backend:
+              service:
+                name: location-clusterip-srv
+                port:
+                  number: 80
+          - path: /api/Individual
+            pathType: Prefix
+            backend:
+              service:
+                name: individual-clusterip-srv
+                port:
+                  number: 80
+          - path: /api/Individuallabs
+            pathType: Prefix
+            backend:
+              service:
+                name: individuallabs-clusterip-srv
+                port:
+                  number: 80
+          

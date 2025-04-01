@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: individuallabs-depl
+spec:
+  selector:
+    matchLabels:
+      app: individuallabsservice    
+  template:
+    metadata:
+      labels:
+        app: individuallabsservice
+    spec:
+      containers:
+        - name: individuallabsservice
+          image: aces32/covid19.individuallabsservice:latest
+  replicas: 1

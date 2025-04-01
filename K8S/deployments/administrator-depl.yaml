@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: administrator-depl
+spec:
+  selector:
+    matchLabels:
+      app: administratorservice    
+  template:
+    metadata:
+      labels:
+        app: administratorservice
+    spec:
+      containers:
+        - name: administratorservice
+          image: aces32/covid19.adminservice:latest
+  replicas: 1
