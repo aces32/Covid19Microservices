@@ -54,14 +54,33 @@ namespace Covid19.IndividualService.Core.Features.Command.BookCovidTest
             getAdminProfiling.SpaceAllocated += 1;
             await _bookingAvailabilityRepository.UpdateAsync(getAdminProfiling);
 
+            await PublishAddedAllocatedSpaceToIndividualServiceAsync(getAdminProfiling);
+
+            await PublishBookedCovidTestToLabsAsync(request, insertIndividualDetails);
+
+            return _mapper.Map<BookCovidTestCommandResponse>(insertIndividualDetails);
+
+        }
+
+        private async Task PublishBookedCovidTestToLabsAsync(BookCovidTestCommand request, Individual insertIndividualDetails)
+        {
+            await _publishEndpoint.Publish(new CovidTestBookedEvent
+            {
+                IndividualId = insertIndividualDetails.Id,
+                EmailAddress = insertIndividualDetails.EmailAddress,
+                BookingDate = request.BookingDate,
+                LocationId = request.LocationId,
+                TestType = (TestTypeEvent)request.IndividualLab.TestType
+            });
+        }
+
+        private async Task PublishAddedAllocatedSpaceToIndividualServiceAsync(BookingAvailability getAdminProfiling)
+        {
             await _publishEndpoint.Publish(new SpaceAllocatedIncreasedEvent
             {
                 AdminBookingAllocationId = getAdminProfiling.Id,
                 SpaceAllocated = getAdminProfiling.SpaceAllocated
             });
-
-            return _mapper.Map<BookCovidTestCommandResponse>(insertIndividualDetails);
-
         }
     }
 }

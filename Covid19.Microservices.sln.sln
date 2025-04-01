@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19.IndividualService", "Covid19.IndividualService\Covid19.IndividualService.csproj", "{3C32F03E-C0BC-4B91-BFC1-633202692D95}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19.AdministratorService", "Covid19.AdministratorService\Covid19.AdministratorService.csproj", "{6B7F98C7-8285-4456-BC17-63DC7970A366}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19.LocationService", "Covid19.LocationService\Covid19.LocationService.csproj", "{0A9209E5-1A5A-4930-BE0C-D335F03C447D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19.IndividualLabsService", "Covid19.IndividualLabsService\Covid19.IndividualLabsService.csproj", "{4D53C323-61AA-4CDE-90BB-9EAD5141D12F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0A9209E5-1A5A-4930-BE0C-D335F03C447D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A9209E5-1A5A-4930-BE0C-D335F03C447D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A9209E5-1A5A-4930-BE0C-D335F03C447D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D53C323-61AA-4CDE-90BB-9EAD5141D12F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D53C323-61AA-4CDE-90BB-9EAD5141D12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D53C323-61AA-4CDE-90BB-9EAD5141D12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D53C323-61AA-4CDE-90BB-9EAD5141D12F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
