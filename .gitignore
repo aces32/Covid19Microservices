@@ -36,7 +36,6 @@ docker-compose.override.yml
 secrets.json
 
 ## Local dev settings
-**/appsettings.Development.json
 **/appsettings.Local.json
 
 ## Temporary files
