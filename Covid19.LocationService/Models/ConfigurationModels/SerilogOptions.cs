@@ -1,4 +1,4 @@
-﻿namespace Covid19.IndividualService.Models.ConfigurationModels
+﻿namespace Covid19.LocationService.Models.ConfigurationModels
 {
     public class SerilogOptions
     {

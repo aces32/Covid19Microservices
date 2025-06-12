@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Covid19.IndividualService.Domain.Entities;
+using Covid19.LocationService.Domain.Entities;
 using Covid19.LocationService.Core.Dto;
 using Covid19.LocationService.Core.Features.Locations.Queries.GetLocationsByIds;
 using static System.Runtime.InteropServices.JavaScript.JSType;

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Covid19.IndividualService.Domain.Entities;
+using Covid19.LocationService.Domain.Entities;
 using Covid19.LocationService.Domain.Common;
 
 namespace Covid19.LocationService.Persistence
