@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19.LocationService", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19.IndividualLabsService", "Covid19.IndividualLabsService\Covid19.IndividualLabsService.csproj", "{4D53C323-61AA-4CDE-90BB-9EAD5141D12F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19.Shared.Tests", "Covid19.Shared.Tests\Covid19.Shared.Tests.csproj", "{F5879B2F-57F7-49ED-B29C-A997C3587D52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4D53C323-61AA-4CDE-90BB-9EAD5141D12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D53C323-61AA-4CDE-90BB-9EAD5141D12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D53C323-61AA-4CDE-90BB-9EAD5141D12F}.Release|Any CPU.Build.0 = Release|Any CPU
+                {F5879B2F-57F7-49ED-B29C-A997C3587D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+                {F5879B2F-57F7-49ED-B29C-A997C3587D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+                {F5879B2F-57F7-49ED-B29C-A997C3587D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+                {F5879B2F-57F7-49ED-B29C-A997C3587D52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
