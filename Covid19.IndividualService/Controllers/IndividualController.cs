@@ -44,7 +44,7 @@ namespace Covid19.IndividualService.Controllers
         }
 
         /// <summary>
-        /// An enpoint to return individual booked tests based on emailaddress and mobile number
+        /// An endpoint to return individual booked tests based on emailaddress and mobile number
         /// </summary>
         /// <param name="emailAddress"></param>
         /// <param name="mobileNumber"></param>
