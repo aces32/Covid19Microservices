@@ -36,7 +36,7 @@ namespace Covid19.AdministratorService.Core.Features.Administrators.Command.Allo
 
             RuleFor(e => e)
             .MustAsync(DoesAllocatedBookingExist)
-            .WithMessage("Booking has been allocated for the specifed location at the specified date.");
+            .WithMessage("Booking has been allocated for the specified location at the specified date.");
 
         }
 
