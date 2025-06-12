@@ -1,4 +1,4 @@
-﻿using Covid19.IndividualService.Models.ConfigurationModels;
+﻿using Covid19.LocationService.Models.ConfigurationModels;
 using Microsoft.ApplicationInsights.Extensibility;
 using Serilog;
 using Serilog.Events;

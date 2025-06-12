@@ -1,4 +1,4 @@
-﻿using Covid19.IndividualService.Domain.Entities;
+﻿using Covid19.LocationService.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Covid19.LocationService.Persistence.Repository
