@@ -5,56 +5,15 @@ using Covid19.AdministratorService.Models.LocationModels;
 using Covid19.AdministratorService.Domain.Entities;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Threading;
+using Covid19.AdministratorService.Tests.Fakes;
 using Xunit;
 
 namespace Covid19.AdministratorService.Tests
 {
     public class GetAvailableBookingDetailsQueryHandlerTests
     {
-        private class FakeAdminBookingRepository : IAdminBookingRepository
-        {
-            private readonly IEnumerable<AdminBookingAllocation> _items;
-            public FakeAdminBookingRepository(IEnumerable<AdminBookingAllocation> items) => _items = items;
-            public Task<IEnumerable<AdminBookingAllocation>> ListAllAsync() => Task.FromResult(_items);
-            // unused interface members
-            public Task<AdminBookingAllocation> AddAsync(AdminBookingAllocation entity, bool saveCurrentChanges = true) => throw new NotImplementedException();
-            public Task DeleteAsync(AdminBookingAllocation entity, bool saveCurrentChanges = true) => throw new NotImplementedException();
-            public Task<bool> AnyAsync(System.Linq.Expressions.Expression<Func<AdminBookingAllocation, bool>> filterExpression) => throw new NotImplementedException();
-            public Task<AdminBookingAllocation?> FindWhere(System.Linq.Expressions.Expression<Func<AdminBookingAllocation, bool>> filterExpression) => throw new NotImplementedException();
-            public Task<IEnumerable<AdminBookingAllocation>> GetPagedResponseAsync(int page, int size) => throw new NotImplementedException();
-            public Task<AdminBookingAllocation?> GetByIdAsync(int id) => throw new NotImplementedException();
-            public Task<AdminBookingAllocation?> GetByIdAsync(Guid id) => throw new NotImplementedException();
-            public Task<IEnumerable<TProjected>> ListAllAsync<TProjected>(System.Linq.Expressions.Expression<Func<AdminBookingAllocation, TProjected>> projectionExpression) => throw new NotImplementedException();
-            public Task<IEnumerable<AdminBookingAllocation>> WhereAsync(System.Linq.Expressions.Expression<Func<AdminBookingAllocation, bool>> filterExpression) => throw new NotImplementedException();
-            public Task SaveChangesAsync(bool saveCurrentChanges = true) => throw new NotImplementedException();
-            public Task UpdateAsync(AdminBookingAllocation entity, bool saveCurrentChanges = true) => throw new NotImplementedException();
-        }
-
-        private class FakeMediator : IMediator
-        {
-            private readonly List<AvailableLocationListDto> _locations;
-            public FakeMediator(List<AvailableLocationListDto> locations) => _locations = locations;
-            public Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken)
-            {
-                if (request is GetLocationsByIdsQuery)
-                {
-                    return Task.FromResult((TResponse)(object)_locations);
-                }
-                throw new NotImplementedException();
-            }
-            // unused members
-            public Task<object?> Send(object request, CancellationToken cancellationToken = default) => throw new NotImplementedException();
-            public Task Publish(object notification, CancellationToken cancellationToken = default) => Task.CompletedTask;
-            public Task Publish<TNotification>(TNotification notification, CancellationToken cancellationToken = default) where TNotification : INotification => Task.CompletedTask;
-            public Task Publish<TNotification>(TNotification notification, PublishOptions options, CancellationToken cancellationToken = default) where TNotification : INotification => Task.CompletedTask;
-        }
-
-        private class NoOpLogger<T> : ILogger<T>
-        {
-            public IDisposable BeginScope<TState>(TState state) => null!;
-            public bool IsEnabled(LogLevel logLevel) => false;
-            public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) { }
-        }
 
         [Fact]
         public async Task Handle_ReturnsBookingDetailsWithLocations()

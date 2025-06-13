@@ -6,6 +6,9 @@ using Covid19.LocationService.Domain.Entities;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Covid19.LocationService.Tests.Fakes;
+using System;
+using System.Threading;
 using Xunit;
 
 namespace Covid19.LocationService.Tests
@@ -42,11 +45,5 @@ namespace Covid19.LocationService.Tests
             Assert.Equal("A", result[0].LocationName);
         }
 
-        private class TestLogger<T> : ILogger<T>
-        {
-            public IDisposable BeginScope<TState>(TState state) => null!;
-            public bool IsEnabled(LogLevel logLevel) => false;
-            public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) { }
-        }
     }
 }
